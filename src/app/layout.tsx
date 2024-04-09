@@ -1,6 +1,8 @@
 import "./globals.css";
-import { Figtree } from "next/font/google";
 import localFont from "next/font/local";
+import { Figtree } from "next/font/google";
+import { Header } from "./_components/header";
+import { Footer } from "./_components/footer";
 
 // Font configs //
 const figtree = Figtree({
@@ -38,15 +40,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html dir="rtl" className={`${figtree.variable} ${yekanbakh.variable}`}>
-      <body className="flex flex-col min-h-screen">
-        <header className="bg-gray-200 h-20 capitalize font-bold flex items-center justify-center">
-          header
-        </header>
+    <html
+      dir="rtl"
+      className={`dark ${figtree.variable} ${yekanbakh.variable}`}
+    >
+      <body className="min-h-screen grid grid-rows-[80px_1fr_auto] dark:text-base-content dark:bg-base-100">
+        <Header />
         <div className="flex-1 flex">{children}</div>
-        <footer className="bg-gray-200 h-20 capitalize font-bold flex items-center justify-center">
-          footer
-        </footer>
+        <Footer />
       </body>
     </html>
   );
