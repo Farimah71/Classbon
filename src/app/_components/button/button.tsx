@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import { ButtonProps, ButtonShape } from "./button.types";
 import { Size } from "../types/component/size.type";
+import { Loading } from "../loading/loading";
 
 const shapeClasses: Record<ButtonShape, string> = {
   default: "",
@@ -46,6 +47,7 @@ export const Button: React.FC<ButtonProps> = ({
 
   return (
     <button type={type} disabled={isDisabled} className={classes} {...rest}>
+      {isLoading && <Loading type={loadingType} />}
       {isLoading ? loadingText : children}
     </button>
   );

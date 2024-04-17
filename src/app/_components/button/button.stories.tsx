@@ -1,5 +1,6 @@
 import { Button } from ".";
 import { Meta, StoryObj } from "@storybook/react";
+import { Loading } from "../loading/loading";
 
 const meta: Meta<typeof Button> = {
   component: Button,
@@ -124,8 +125,6 @@ export const SquareButton: Story = {
       <Button variant="neutral" shape="square" size="tiny">
         <svg
           fill="#eeeeee"
-          // height="64px"
-          // width="64px"
           version="1.1"
           id="Capa_1"
           xmlns="http://www.w3.org/2000/svg"
@@ -151,8 +150,6 @@ export const SquareButton: Story = {
       <Button variant="neutral" shape="square" size="small">
         <svg
           fill="#eeeeee"
-          // height="64px"
-          // width="64px"
           version="1.1"
           id="Capa_1"
           xmlns="http://www.w3.org/2000/svg"
@@ -178,8 +175,6 @@ export const SquareButton: Story = {
       <Button variant="neutral" shape="square" size="normal">
         <svg
           fill="#eeeeee"
-          // height="64px"
-          // width="64px"
           version="1.1"
           id="Capa_1"
           xmlns="http://www.w3.org/2000/svg"
@@ -205,8 +200,6 @@ export const SquareButton: Story = {
       <Button variant="neutral" shape="square" size="large">
         <svg
           fill="#eeeeee"
-          // height="64px"
-          // width="64px"
           version="1.1"
           id="Capa_1"
           xmlns="http://www.w3.org/2000/svg"
@@ -300,6 +293,21 @@ export const IconButton: Story = {
         </svg>
         Support
       </Button>
+    </>
+  ),
+};
+
+export const ButtonWithLoading: Story = {
+  render: () => (
+    <>
+      <Button variant="neutral" isLoading={true} loadingText="Loading" />
+      <Button variant="accent" isLoading={true} loadingText="Loading" loadingType="ring" />
+      <Button
+        variant="primary"
+        isLoading={true}
+        loadingText="Loading"
+        isOutlined
+      />
     </>
   ),
 };
