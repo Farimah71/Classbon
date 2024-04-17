@@ -1,6 +1,6 @@
 .badge {
     @apply inline-flex gap-1 items-center justify-center transition duration-200 ease-in-out rounded-md font-semibold;
-    @apply  leading-5  !bg-opacity-30 !border-opacity-30;
+    @apply leading-5 !bg-opacity-30 !border-opacity-30;
     width: fit-content;
     padding-left: 0.763rem;
     padding-right: 0.763rem;
