@@ -9,7 +9,8 @@
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test": "jest"
+    "test": "jest",
+    "test:generate-output": "jest --json --outputFile=.jest-test-results.json"
   },
   "dependencies": {
     "classnames": "^2.5.1",
@@ -22,6 +23,7 @@
     "@chromatic-com/storybook": "^1.3.2",
     "@storybook/addon-essentials": "^8.0.6",
     "@storybook/addon-interactions": "^8.0.6",
+    "@storybook/addon-jest": "^8.0.8",
     "@storybook/addon-links": "^8.0.6",
     "@storybook/addon-onboarding": "^8.0.6",
     "@storybook/blocks": "^8.0.6",
