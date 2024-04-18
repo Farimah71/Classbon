@@ -1,6 +1,7 @@
 import { CourseSummary } from "@/types/course-summary.interface";
 import { HomeHeroSection } from "./_components/home-hero-section/home-hero-section";
 import { CourseCardList } from "./(courses)/_components/course-card-list";
+import { IconBasket } from "./_components/icons/icons";
 
 async function getNewestCourses(count: number): Promise<CourseSummary[]> {
   const res = await fetch(

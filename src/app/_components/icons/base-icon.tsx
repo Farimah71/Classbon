@@ -1,6 +1,6 @@
-import { SVGAttributes } from "react";
+import { SVGIcon } from "./icon.types";
 
-const BaseIcon: React.FC<SVGAttributes<SVGAElement>> = ({
+const BaseIcon: React.FC<SVGIcon> = ({
   color = "currentColor",
   width = 24,
   height = 24,
@@ -20,7 +20,7 @@ const BaseIcon: React.FC<SVGAttributes<SVGAElement>> = ({
       strokeLinecap="round"
       strokeLinejoin="round"
       stroke={color}
-      //   {...rest}
+      {...rest}
     >
       {children}
     </svg>
