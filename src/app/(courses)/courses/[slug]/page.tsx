@@ -1,7 +1,6 @@
-import { Progress } from "@/app/_components/progress";
-import { Rating } from "@/app/_components/rating";
 import { API_URL } from "@/configs/global";
 import { CourseDetail } from "@/types/course-details.interface";
+import { CourseAside } from "./_components/course-aside";
 
 //Get set of slugs to change dynamic routing to static routing:
 // export async function generateStaticParams() {
@@ -28,7 +27,7 @@ export default async function CourseDetails({
   const course = await getCourseDetails(slug);
 
   return (
-    <div className="h-96 container grid grid-cols-10 grid-rows-[1fr 1fr] gap-10 py-10">
+    <div className="container grid grid-cols-10 grid-rows-[1fr 1fr] gap-10 py-10">
       <div className="bg-primary pointer-events-none absolute right-0 aspect-square w-1/2 rounded-full opacity-10 blur-3xl"></div>
       <div className="col-span-10 xl:col-span-7">
         <h1 className="text-center xl:text-right text-2xl lg:text-3xl xl:text-4xl font-black leading-10">
@@ -41,8 +40,7 @@ export default async function CourseDetails({
         <div className=" mt-5">Video Player Component</div>
       </div>
       <div className="col-span-10 xl:col-span-3 ">
-        <Rating rate={3} />
-        <Progress value={75} />
+        <CourseAside {...course} />
       </div>
       <div className="col-span-10 xl:col-span-6 bg-info"></div>
       <div className="col-span-10 xl:col-span-4 bg-warning"></div>
