@@ -5,6 +5,7 @@ import { API_URL } from "@/configs/global";
 async function getNewestCourses(count: number): Promise<CourseSummary[]> {
   const res = await fetch(`${API_URL}/courses/newest/${count}`, {
     cache: "no-store",
+    next: { revalidate: 24 * 60 * 60 },
   });
 
   // Introduce a 5-second delay after the fetch call

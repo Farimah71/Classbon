@@ -13,7 +13,9 @@ import { TestimonialList } from "./_components/testimonial/testimonial-list";
 import { testimonials } from "@/data/testimonials";
 
 async function getNewestPosts(count: number): Promise<BlogPostSummary[]> {
-  const res = await fetch(`${API_URL}/blog/newest/${count}`);
+  const res = await fetch(`${API_URL}/blog/newest/${count}`, {
+    next: { revalidate: 24 * 60 * 60 },
+  });
   return res.json();
 }
 
