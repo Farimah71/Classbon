@@ -1,7 +1,7 @@
 import { HomeHeroSection } from "./_components/home-hero-section/home-hero-section";
 import { CourseCardList } from "./(courses)/_components/course-card-list";
 import { homeFeatures } from "@/data/home-features";
-import { Feature } from "./_components/feature/feature";
+import { Feature } from "./_components/feature";
 import { Button } from "./_components/button";
 import { IconArrowLeftFill } from "./_components/icons/icons";
 import { BlogPostSummary } from "@/types/blog-post-summary.interface";

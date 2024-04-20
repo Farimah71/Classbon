@@ -1,6 +1,6 @@
 import { Badge } from "@/app/_components/badge";
 import { IconArrowLeftFill, IconClock } from "@/app/_components/icons/icons";
-import { Price } from "@/app/_components/price/price";
+import { Price } from "@/app/_components/price";
 import { CourseSummary } from "@/types/course-summary.interface";
 import Image from "next/image";
 import Link from "next/link";
