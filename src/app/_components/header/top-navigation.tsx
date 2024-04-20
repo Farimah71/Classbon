@@ -16,6 +16,7 @@ export const TopNavigation: React.FC = () => {
         const isActive = item.href === pathName;
         return (
           <Link
+            key={`item-${item.title}`}
             href={item.href}
             className={`hover:text-primary pb-2 transition-colors duration-300 ${
               isActive && "border-b-2 border-primary/30 text-primary"
