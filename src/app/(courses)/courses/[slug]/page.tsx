@@ -3,6 +3,7 @@ import { CourseDetail } from "@/types/course-details.interface";
 import { CourseAside } from "./_components/course-aside";
 import { Tab } from "@/types/tab.type";
 import { Tabs } from "@/app/_components/tab";
+import { Accordion } from "@/app/_components/accordion";
 
 //Get set of slugs to change dynamic routing to static routing:
 // export async function generateStaticParams() {
@@ -28,6 +29,12 @@ export default async function CourseDetails({
   const { slug } = params;
   const course = await getCourseDetails(slug);
 
+  const faqs: Accordion[] = course.frequentlyAskedQuestions.map((faq) => ({
+    id: faq.id,
+    title: faq.question,
+    content: faq.answer,
+  }));
+
   const tabs: Tab[] = [
     {
       label: "مشخصات دوره",
@@ -39,7 +46,7 @@ export default async function CourseDetails({
     },
     {
       label: "سوالات متداول",
-      content: "accordion components",
+      content: <Accordion data={faqs} />,
     },
   ];
 
