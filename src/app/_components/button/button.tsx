@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { ButtonProps, ButtonShape } from "./button.types";
-import { Size } from "../types/component/size.type";
+import { Size } from "../types/size.type";
 import { Loading } from "../loading/loading";
 
 const shapeClasses: Record<ButtonShape, string> = {

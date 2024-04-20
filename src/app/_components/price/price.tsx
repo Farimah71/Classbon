@@ -1,6 +1,6 @@
 import { Badge } from "../badge";
 import { IconToman } from "../icons/icons";
-import { Size } from "../types/component/size.type";
+import { Size } from "../types/size.type";
 import { PriceProps } from "./price.types";
 
 const sizeClasses: Record<Size, { textSize: string; svgSize: number }> = {

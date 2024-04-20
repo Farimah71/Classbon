@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { BadgeProps } from "./badge.types";
-import { Size } from "../types/component/size.type";
+import { Size } from "../types/size.type";
 
 const sizeClasses: Record<Size, string> = {
   tiny: "badge-xs",
