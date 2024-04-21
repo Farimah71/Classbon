@@ -4,6 +4,7 @@ import { CourseAside } from "./_components/course-aside";
 import { Tab } from "@/types/tab.type";
 import { Tabs } from "@/app/_components/tab";
 import { Accordion } from "@/app/_components/accordion";
+import { CourseComments } from "./_components/comments/course-comments";
 
 //Get set of slugs to change dynamic routing to static routing:
 // export async function generateStaticParams() {
@@ -42,7 +43,7 @@ export default async function CourseDetails({
     },
     {
       label: "دیدگاه‌ها و پرسش",
-      content: "course comments",
+      content: <CourseComments />,
     },
     {
       label: "سوالات متداول",
