@@ -19,7 +19,7 @@ describe("Home hero section", () => {
             می‌تونی بدون محدودیت به قله‌های بالاتر صعود کنی. ما همیشه هواتو
             داریم.
           </p>
-          <div className="flex gap-x-4">
+          <div className="flex gap-x-4 justify-center xl:justify-start">
             <Button variant="primary">دوره‌های ری‌اکت و نکست</Button>
             <Button variant="neutral">مشاوره برنامه‌نویسی</Button>
           </div>

@@ -1,6 +1,6 @@
-import { SVGIcon } from "./icon.types";
+import { SvgIconType } from "./icon.types";
 
-const BaseIcon: React.FC<SVGIcon> = ({
+const BaseIcon: React.FC<SvgIconType> = ({
   color = "currentColor",
   width = 24,
   height = 24,
