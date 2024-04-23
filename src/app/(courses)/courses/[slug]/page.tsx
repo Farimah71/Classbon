@@ -5,6 +5,8 @@ import { Tab } from "@/types/tab.type";
 import { Tabs } from "@/app/_components/tab";
 import { Accordion } from "@/app/_components/accordion";
 import { CourseComments } from "./_components/comments/course-comments";
+import { CourseChapter } from "@/types/course-chapter.interface";
+import { CourseCurriculum } from "./_components/curriculum";
 
 //Get set of slugs to change dynamic routing to static routing:
 // export async function generateStaticParams() {
@@ -22,13 +24,24 @@ async function getCourseDetails(slug: string): Promise<CourseDetail> {
   return res.json();
 }
 
+async function getCurriculum(slug: string): Promise<CourseChapter[]> {
+  const res = await fetch(`${API_URL}/courses/${slug}/curriculum`);
+  return res.json();
+}
+
 export default async function CourseDetails({
   params,
 }: {
   params: { slug: string };
 }) {
   const { slug } = params;
-  const course = await getCourseDetails(slug);
+  const courseData = getCourseDetails(slug);
+  const courseCurriculumData = getCurriculum(slug);
+
+  const [course, courseCurriculum] = await Promise.all([
+    courseData,
+    courseCurriculumData,
+  ]);
 
   const faqs: Accordion[] = course.frequentlyAskedQuestions.map((faq) => ({
     id: faq.id,
@@ -70,7 +83,12 @@ export default async function CourseDetails({
       <div className="col-span-10 xl:col-span-6">
         <Tabs tabs={tabs} />
       </div>
-      <div className="col-span-10 xl:col-span-4 bg-warning"></div>
+      <div className="col-span-10 xl:col-span-4">
+        <div className="sticky top-5">
+          <h2 className="mb-5 text-xl">سرفصل های دوره</h2>
+          <CourseCurriculum data={courseCurriculum} />
+        </div>
+      </div>
     </div>
   );
 }
