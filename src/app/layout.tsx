@@ -1,10 +1,11 @@
-import "./globals.css";
-import localFont from "next/font/local";
+import { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import { Header } from "./_components/header";
 import { Footer } from "./_components/footer";
 import { QueryProvider } from "@/providers/react-query-provider";
+import localFont from "next/font/local";
 import NextTopLoader from "nextjs-toploader";
+import "./globals.css";
 
 // Font configs //
 const figtree = Figtree({
@@ -35,6 +36,11 @@ const yekanbakh = localFont({
   variable: "--font-yekanbakh",
 });
 // Font configs //
+
+export const metadata: Metadata = {
+  title: "Classbon",
+  description: "",
+};
 
 export default function RootLayout({
   children,

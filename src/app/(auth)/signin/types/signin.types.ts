@@ -1,3 +1,3 @@
-export interface Signin {
+export interface SignIn {
   mobile: string;
 }
