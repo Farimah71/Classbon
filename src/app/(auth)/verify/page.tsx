@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default async function Verify() {
-  return <div>This is verify page</div>;
+  return <Link href="/signin">Go to signin page</Link>;
 }
