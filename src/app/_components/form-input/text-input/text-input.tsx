@@ -2,7 +2,7 @@ import { FieldValues, get } from "react-hook-form";
 import { TextInputProps } from "./text-input.types";
 import { Textbox } from "../../textbox";
 
-export const TextInput = <TFormValues extends FieldValues>({
+const TextInput = <TFormValues extends FieldValues>({
   name,
   register,
   rules,
@@ -23,3 +23,5 @@ export const TextInput = <TFormValues extends FieldValues>({
     </>
   );
 };
+
+export default TextInput;

@@ -1,7 +1,15 @@
-import { QueryCache, QueryClient } from "@tanstack/react-query";
+import { MutationCache, QueryCache, QueryClient } from "@tanstack/react-query";
 
 export const queryClient = new QueryClient({
+  // For fetching data from server
   queryCache: new QueryCache({
+    onError: (error) => {
+      //show notification
+    },
+  }),
+
+  // For updating data on server
+  mutationCache: new MutationCache({
     onError: (error) => {
       //show notification
     },
